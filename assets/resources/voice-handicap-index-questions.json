@@ -1,0 +1,273 @@
+{
+    "name" : "Voice Handicap Index",
+    "question-groups" : [
+        {
+            "id" : 0,
+            "question-block" : "drop-down",
+            "options" : [
+                {
+                    "text" : "Never",
+                    "value" : 0
+                },
+                {
+                    "text" : "Almost Never",
+                    "value" : 1
+                },
+                {
+                    "text" : "Sometimes",
+                    "value" : 2
+                },
+                {
+                    "text" : "Almost Always",
+                    "value" : 3
+                },
+                {
+                    "text" : "Always",
+                    "value" : 4
+                }
+            ],
+            "scoring" : {
+                "totals" : {
+                    "breaks" : [
+                        {
+                            "text" : "Mild",
+                            "min" : 0,
+                            "max" : 33.69
+                        },
+                        {
+                            "text" : "Moderate",
+                            "min" : 33.69,
+                            "max" : 44.37
+                        },
+                        {
+                            "text" : "Severe",
+                            "min" : 44.37,
+                            "max" : 61.39
+                        }
+                    ]
+                },
+                "question-types" : [
+                    {
+                        "name" : "Functional",
+                        "breaks" : [
+                            {
+                                "text" : "Mild",
+                                "min" : 0,
+                                "max" : 10.07,
+                                "single-std-dev": 1.99
+                            },
+                            {
+                                "text" : "Moderate",
+                                "min" : 10.07,
+                                "max" : 12.41,
+                                "single-std-dev": 1.38
+                            },
+                            {
+                                "text" : "Severe",
+                                "min" : 12.41,
+                                "max" : 18.3,
+                                "single-std-dev": 1.5
+                            }
+                        ]                        
+                    }
+                ]
+                    "names" : [
+                        "Functional",
+                        "Emotional",
+                        "Physical"
+                    ],
+                    "breaks" : [
+                        {
+                            "text" : "Mild",
+                            "min" : 0,
+                            "max" : 33.69
+                        },
+                        {
+                            "text" : "Moderate",
+                            "min" : 0,
+                            "max" : 0
+                        },
+                        {
+                            "text" : "Severe",
+                            "min" : 0,
+                            "max" : 0
+                        }
+                    ]
+                }
+            },
+            "questions" : [
+                {
+                    "id" : 1,
+                    "text" : "My voice makes it difficult for people to hear me.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 2,
+                    "text" : "I run out of air when I talk.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 3,
+                    "text" : "People have difficulty understanding me in a noisy room.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 4,
+                    "text" : "The sound of my voice varies throughout the day.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 5,
+                    "text" : "My family has difficulty hearing me when I call them throughout the house.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 6,
+                    "text" : "I use the phone less often than I would like.",
+                    "question-type" : "functional"
+                },   
+                {
+                    "id" : 7,
+                    "text" : "I am tense when talking with others because of my voice.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 8,
+                    "text" : "I tend to avoid groups of people because of my voice.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 9,
+                    "text" : "People seem irritated with my voice.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 10,
+                    "text" : "People ask, \"What's wrong with your voice?\"",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 11,
+                    "text" : "I speak with friends, neighbors or relatives less often because of my voice.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 12,
+                    "text" : "People ask me to repeat myself when speaking face-to-face.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 13,
+                    "text" : "My voice sounds creaky and dry.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 14,
+                    "text" : "I feel as though I have to strain to produce voice.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 15,
+                    "text" : "I find other people don't understand my voice problem.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 16,
+                    "text" : "My voice difficulties restrict my personal and social life.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 17,
+                    "text" : "The clarity of my voice is unpredictable.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 18,
+                    "text" : "I try to change my voice to sound different.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 19,
+                    "text" : "I feel left out of conversations because of my voice.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 20,
+                    "text" : "I use a great deal of effort to speak.",
+                    "question-type" : "physical"
+                },    
+                {
+                    "id" : 21,
+                    "text" : "My voice is worse in the evening.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 22,
+                    "text" : "My voice problem causes me to lose income.",
+                    "question-type" : "functional"
+                },
+                {
+                    "id" : 23,
+                    "text" : "My voice problem upsets me.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 24,
+                    "text" : "I am less out-going because of my voice problem.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 25,
+                    "text" : "My voice makes me feel handicapped.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 26,
+                    "text" : "My voice \"gives out\" on me in the middle of speaking.",
+                    "question-type" : "physical"
+                },
+                {
+                    "id" : 27,
+                    "text" : "I feel annoyed when people ask me to repeat.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 28,
+                    "text" : "I feel embarrassed when people ask me to repeat.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 29,
+                    "text" : "My voice makes me feel incompetent.",
+                    "question-type" : "emotional"
+                },
+                {
+                    "id" : 30,
+                    "text" : "I'm ashamed of my voice problem.",
+                    "question-type" : "emotional"
+                }
+            ]
+        },
+        {
+            "id" : 1,
+            "question-block" : "radio-range",
+            "options" : {
+                "min" : {
+                    "text" : "Least Severe",
+                    "value" : 1
+                },
+                "max" : {
+                    "text" : "Most Severe",
+                    "value" : 5
+                },
+                "interval" : 1
+            },
+            "questions" : [
+                {
+                    "id" : 0,
+                    "text" : "This is placeholder text."
+                }
+            ]
+        }
+    ]
+}

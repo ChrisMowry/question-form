@@ -1,0 +1,30 @@
+
+Question Types
+    drop downs - option lists
+
+    - Options
+        - text
+        - value
+
+
+Options
+    - name
+    - { text, value }
+
+Categories
+    - text (description)
+    - level (ex: mild, moderate, severe)
+    - min
+    - max
+
+QuestionGroup
+    - id
+    - text
+    - questions : []
+    - category
+
+Question
+    - id
+    - text
+    - type
+    - weight
