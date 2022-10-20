@@ -8,8 +8,6 @@ export const QuestionContextProvider = ({children}) => {
     const sessionState = retrieveTestState();
     const nameValue = sessionState ? sessionState.name : '';
 
-
-
     const [ name, setName ] = useState( nameValue );
     const [ submitDate, setSubmitDate ] = useState( new Date() );
     const [ questions, setQuestions ] = useState( [] );
@@ -23,6 +21,6 @@ export const QuestionContextProvider = ({children}) => {
         setQuestions
     }
 
-    return (<QuestionContext.Provider value={ values }>{children}</QuestionContext.Provider>);
+    return (<QuestionContext.Provider value={ values }>{ children }</QuestionContext.Provider>);
 
 }

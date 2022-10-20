@@ -1,4 +1,4 @@
-import { getGroup } from './GetQuestions';
+import { getGroup, getTotalCategories } from './GetQuestions';
 
 const groupBy = ( questions ) => {
 
@@ -16,26 +16,25 @@ export const getGroupScores = ( questions ) => {
     const keys = Object.keys( groups );
 
     let scoreArray = [];
-    const scores = keys.map(( key ) => {
-
+    keys.forEach(( key ) => {
         // gets score sum
         const sum = groups[ key ].reduce(( accumulator, question ) => {
-                        const answer = question.answer != undefined ? question.answer : 0;
+                        const answer = question.answer !== undefined ? question.answer : 0;
                         return accumulator + answer;
                     }, 0);
-    
-        // gets the category based on the score
-        const { name, categories } = getGroup( parseInt(key) );
-        const category = categories.find( (category) => {
-            const { min, max = 9999999999999999.99 } = category;
-            return parseFloat(sum) >= parseFloat(min) && parseFloat(sum) <= parseFloat(max);
-        });
-
-        // gets score sum
+                   
+        // gets max score sum
         const maxSum = groups[ key ].reduce(( accumulator, question ) => {
             const maxValue = Math.max( ...question.values.map((value) => value.value) )
             return accumulator + maxValue;
-        }, 0);        
+        }, 0);  
+
+        // gets the category based on the score
+        const { name, categories } = getGroup( parseInt(key) );
+        const category = categories.find( (category) => {
+            const { min, max = maxSum } = category;
+            return parseFloat(sum) >= parseFloat(min) && parseFloat(sum) <= parseFloat(max);
+        });
 
         scoreArray.push(
             { 
@@ -58,9 +57,9 @@ export const getUnansweredGroupCount = ( questions ) => {
     const keys = Object.keys( groups );
 
     let countArray = [];
-    const unanswered = keys.map(( key ) => {
+    keys.forEach(( key ) => {
         const count = groups[ key ].reduce(( accumulator, question ) => {
-            const value = question.answer != undefined ? 0 : 1;
+            const value = question.answer !== undefined ? 0 : 1;
             return accumulator + value;
         }, 0);
 
@@ -72,18 +71,38 @@ export const getUnansweredGroupCount = ( questions ) => {
 
 
 export const getTotalScore = ( questions ) => {
+
+    // calculates the total score
     const sum = questions.reduce((accumulator, question) => {
-        const value = question.answer != undefined ? question.answer : 0;
+        const value = question.answer !== undefined ? question.answer : 0;
         return accumulator + value;
     }, 0);
 
-    return sum;
+    // calculates the max total score
+    const maxTotal = questions.reduce((accumulator, question) => {
+        const maxValue = Math.max( ...question.values.map((value) => value.value) )
+        return accumulator + maxValue;
+    }, 0);
+
+    // determines the category of the total score
+    const categories = getTotalCategories();
+    const category = categories.find( (category) => {
+        const { min, max = maxTotal } = category;
+        return parseFloat(sum) >= parseFloat(min) && parseFloat(sum) <= parseFloat(max);    
+    });
+
+    return {
+        score: sum,
+        category: category.name,
+        categories: categories,
+        total: maxTotal
+    }
 }
 
 
 export const getTotalUnanswered = ( questions ) => {
     const count = questions.reduce((accumulator, question) => {
-        const value = question.answer != undefined ? 0 : 1;
+        const value = question.answer !== undefined ? 0 : 1;
         return accumulator + value;
     }, 0);
 

@@ -28,7 +28,7 @@ const NameForm = () => {
             <form>
                 <label htmlFor='name-input'>Name:</label>
                 <input id='name-input' name='name' type='text' onChange={_handleNameChange} value={name} />
-                <Link to={'/questions'}>Next</Link>
+                <Link to={'/questions/page/1'}>Next</Link>
             </form>
         </div>
     );

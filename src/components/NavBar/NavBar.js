@@ -10,8 +10,11 @@ const NavBar = () => {
     return (
         <nav>
             <h3>Name: { name }</h3>
+            <span> </span>
             <Link to='/'>Setup</Link>
-            <Link to='/questions'>Questions</Link>
+            <span> </span>
+            <Link to='/questions/page/1'>Questions</Link>
+            <span> </span>
             <Link to='/score'>Score</Link>
         </nav>
     );

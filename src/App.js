@@ -10,7 +10,7 @@ const App = () => {
         <NavBar />
           <Routes>
             <Route path="/" element={ <TitlePage /> } />
-            <Route path="/questions" element={ <QuestionPage /> } />
+            <Route path="/questions/page/:page" element={ <QuestionPage /> } />
             <Route path="/score" element={ <ScoreReportPage /> } />
             <Route path="*" element={ <ErrorPage error={"Not Found"} /> } />
           </Routes>

@@ -3,4 +3,8 @@
 3. Stylize application
 4. Implement PDF creation
 5. Implement unanswered questions error.
-6. 
+----- 6. Add question pages to URL
+7. Add gauges to report page.
+8. Add title, credits, & instructions to first page.
+9. Show error display when a question is not answered or name is not filled out.
+10. 

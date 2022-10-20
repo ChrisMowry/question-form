@@ -1,4 +1,7 @@
 {
+    "name" : "Voice Handicap Index (VHI)",
+    "credits" : "Jacobson, B., Johnson, A., Grywalski, C., et. al. Henry Ford Hospital Division of Speech-Language Sciences & Disorders Department of Neurology",
+    "instructions" : "These are statements that many people have used to describe their voices and the effects of their voices on their lives. Check the responses that indicate how frequently you have the same experience.",
     "types" : [
         {
             "id" : 0,

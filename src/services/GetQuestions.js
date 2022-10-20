@@ -55,3 +55,9 @@ export const getGroup = ( groupId ) => {
     const { groups } = questionsJSON;
     return groups.find(group => group.id === groupId);
 }
+
+export const getTotalCategories = () => {
+    const { total : { categories }} = questionsJSON;
+
+    return categories;
+}
