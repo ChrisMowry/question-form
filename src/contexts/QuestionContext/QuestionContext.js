@@ -11,6 +11,7 @@ export const QuestionContextProvider = ({children}) => {
     const [ name, setName ] = useState( nameValue );
     const [ submitDate, setSubmitDate ] = useState( new Date() );
     const [ questions, setQuestions ] = useState( [] );
+    const [ step, setStep ] = useState( 0 );
 
     const values = {
         name,
@@ -18,7 +19,9 @@ export const QuestionContextProvider = ({children}) => {
         submitDate,
         setSubmitDate,
         questions,
-        setQuestions
+        setQuestions,
+        step,
+        setStep
     }
 
     return (<QuestionContext.Provider value={ values }>{ children }</QuestionContext.Provider>);
