@@ -1,13 +1,43 @@
 
 import { useContext, useEffect, useState } from 'react';
-import { QuestionContext } from '../../contexts/QuestionContext/QuestionContext';
-import { buildQuestions } from '../../services/GetQuestions';
+import { QuestionContext } from '../../contexts';
+import { buildQuestions } from '../../services';
 import { useNavigate, useParams } from 'react-router-dom'
 import PaginationButtons from '../PaginationButtons/PaginationButtons';
 import Question from './Question';
 
 
 const Questions = ( props ) => {
+
+    const style = {
+        questionsContainer: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignSelf: 'center',
+            justifySelf: 'center',
+            alignContent: 'center',
+            justifyContent: 'center',
+            // left: '0',
+            // right: '0',
+            // margin: '0',
+            // padding: '0',
+            // height: '75vh'
+        },
+        list: {
+            listStyleType: 'none',
+            margin: '0',
+            padding: '0'
+        },
+        listItem: {
+            display: 'flex',
+
+            //justifyContent: 'center'
+        },
+        listItemEven: {
+            display: 'flex',
+            backgroundColor: '#C5C5C5'
+        }
+    }
 
     // used to navigate to a different question page in the url
     const navigate = useNavigate();
@@ -54,23 +84,24 @@ const Questions = ( props ) => {
         }
     }
 
+
     return (
-        <>
-            <ul>
+        <div className='questions' style={ style.questionsContainer }>
+            <ul style={ style.list }>
                 {
-                    getQuestionSet( questions, currentPage, totalPages ).map((question) => 
-                        <li key={question.id}>
+                    getQuestionSet( questions, currentPage, totalPages ).map((question, index) => 
+                        <li key={question.id} style={ index % 2 ? style.listItemEven : style.listItem }>
                             <Question key={question.id} props={question} />
                         </li>
                     )
                 }
             </ul>
-            <PaginationButtons 
+            {/* <PaginationButtons 
                 currentPage={currentPage} 
                 totalPages={totalPages} 
                 handleClick={navigatePages}
-            />
-        </>
+            /> */}
+        </div>
     );
 }
 

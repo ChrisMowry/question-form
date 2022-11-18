@@ -5,6 +5,12 @@ const getQuestionData = () => {
     return questionsJSON;
 }
 
+export const getQuestionsMetadata = () => {
+    const { name, credits = "", instructions = ""} = questionsJSON;
+
+    return { name, credits, instructions };
+}
+
 const getQuestions = () => {
     const { questions } = questionsJSON;
     return questions;

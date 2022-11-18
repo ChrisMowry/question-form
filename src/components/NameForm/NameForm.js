@@ -1,14 +1,25 @@
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { QuestionContext } from '../../contexts/QuestionContext/QuestionContext';
-import { getAnswers, buildTestStateObj } from "../../services/TestStateObject";
-import { storeTestState, retrieveTestState } from "../../services/DataPersistence";
+import { QuestionContext } from '../../contexts';
+import { getAnswers, buildTestStateObj } from "../../services";
+import { storeTestState } from "../../services";
+import { TextField } from '@mui/material';
 
 
-const NameForm = () => {
+const NameForm = (props) => {
     const { name , setName } = useContext( QuestionContext );
     const { questions } = useContext( QuestionContext );
     const { submitDate } = useContext( QuestionContext );
+
+    const style = {
+        nameInput:{
+            minWidth: '200px',
+            maxWidth: '500px',
+            width: '40vw'
+        },
+        nameInputText: {
+            textAlign: 'center'
+        }
+    }
 
     const _handleNameChange = (event) => {
         const inputValue = event.target.value;
@@ -23,13 +34,16 @@ const NameForm = () => {
     }, [ name ] );
 
     return (
-        <div className='name-form'>
-            <h1>{name}</h1>
-            <form>
-                <label htmlFor='name-input'>Name:</label>
-                <input id='name-input' name='name' type='text' onChange={_handleNameChange} value={name} />
-                <Link to={'/questions/page/1'}>Next</Link>
-            </form>
+        <div className='name-form' style={ props.style }>
+            <TextField 
+                id='name-input' 
+                label='Name' 
+                inputProps={{ style: style.nameInputText  }}
+                defaultValue={name} 
+                onChange={_handleNameChange} 
+                variant='filled'
+                sx={ style.nameInput }
+            /> 
         </div>
     );
 }

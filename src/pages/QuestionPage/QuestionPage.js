@@ -1,9 +1,21 @@
+import { flexbox } from '@mui/system';
 import Questions from '../../components/Questions/Questions';
 import { QUESTIONS_PER_PAGE } from '../../constants/constants';
 
+
+
 const QuestionPage = () => {
+    const style = {
+        questions : {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            //height: '75vh'
+        }
+    }
+
     return(
-        <Questions questionsPerPage={ QUESTIONS_PER_PAGE } />
+        <Questions style={ style.questions } questionsPerPage={ QUESTIONS_PER_PAGE } />
     );
 }
 

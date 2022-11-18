@@ -9,7 +9,10 @@ import './App.css';
 const styles = {
   container:{
     display: 'flex',
-    justifyItems: 'center'
+    flexDirection: 'column',
+    justifyItems: 'center',
+    flex: 'auto',
+    overflowY: 'scroll'
   }
 }
 
@@ -18,14 +21,14 @@ const App = () => {
     <QuestionContextProvider>
       <Router>
         <Header/>
-        <Container>
+        <div style={ styles.container }>
           <Routes>
             <Route path="/" element={ <TitlePage /> } />
             <Route path="/questions/page/:page" element={ <QuestionPage /> } />
             <Route path="/results" element={ <ScoreReportPage /> } />
             <Route path="*" element={ <ErrorPage error={"Not Found"} /> } />
           </Routes>
-        </Container>
+        </div>
         <Footer />
       </Router>
     </QuestionContextProvider>

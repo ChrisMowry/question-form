@@ -6,37 +6,41 @@ import { Stepper, Step, StepLabel, AppBar, Toolbar } from '@mui/material';
 import { theme } from '../../theme/theme';
 import { STEPS } from '../../constants/constants';
 
-const styles = {
-    appbar: {
-        position: 'sticky',
-        backgroundColor: theme.colors.main
-    },
-    toolbar: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center'
-    },
-    stepper: {
-        width: '64vw'
-    },
-    links: {
-        textDecoration: 'none',
-        color: theme.colors.secondary
-    }
-};
+
 
 const Header = () => {
     const { step, setStep } = useContext( QuestionContext );
+
+    const style = {
+        appbar: {
+            position: 'sticky',
+            flex: 'none',
+            backgroundColor: theme.colors.main
+        },
+        toolbar: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center'
+        },
+        stepper: {
+            width: '65vw'
+        },
+        links: {
+            textDecoration: 'none',
+            color: theme.colors.secondary
+        }
+    };
+
     return (
-        <AppBar sx={ styles.appbar }>
-            <Toolbar sx={ styles.toolbar } >
-                <Stepper activeStep={ step } sx={ styles.stepper }>
+        <AppBar sx={ style.appbar }>
+            <Toolbar sx={ style.toolbar } >
+                <Stepper activeStep={ step } sx={ style.stepper }>
                     {
                         STEPS.map((step) => {
                             return (
                                 <Step key={ step.id }>
                                     <StepLabel>
-                                        <Link style={ styles.links } 
+                                        <Link style={ style.links } 
                                             to={ step.path }
                                             onClick={()=>{ setStep(step.id) }}
                                         >

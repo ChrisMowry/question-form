@@ -1,5 +1,5 @@
 
-export const QUESTIONS_PER_PAGE = 5;
+export const QUESTIONS_PER_PAGE = 10;
 
 export const STEPS = [
     {

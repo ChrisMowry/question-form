@@ -9,9 +9,7 @@ const Scores = () => {
 
     const [ total, setTotal ] = useState( {} );
     const [ groupScores, setGroupScores ] = useState ( [] );
-
-    const { questions } = useContext(QuestionContext);
-    const { submitDate } = useContext(QuestionContext);
+    const { name, submitDate, questions } = useContext(QuestionContext);
 
     useEffect(() => {
 
@@ -36,7 +34,8 @@ const Scores = () => {
 
     return(
         <>
-            <h2>{`Date: ${submitDate}`}</h2>
+            <h2>{`Name: ${ name }`}</h2>
+            <h2>{`Date: ${ submitDate }`}</h2>
             <h2>Total</h2>
             <div>{`Score: ${ total.score }`}</div>
             <div>{`Status : ${ total.category }`}</div>
