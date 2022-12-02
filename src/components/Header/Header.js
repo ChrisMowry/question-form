@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { QuestionContext } from '../../contexts/QuestionContext/QuestionContext';
 import { Stepper, Step, StepLabel, AppBar, Toolbar } from '@mui/material';
 import { theme } from '../../theme/theme';
-import { STEPS } from '../../constants/constants';
+import { STEPS, HEADER_HEIGHT } from '../../constants/constants';
 
 
 
@@ -15,7 +15,12 @@ const Header = () => {
         appbar: {
             position: 'sticky',
             flex: 'none',
-            backgroundColor: theme.colors.main
+            backgroundColor: theme.colors.main,
+            height: `${HEADER_HEIGHT}px`,
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
+            overflow: 'hidden'
         },
         toolbar: {
             display: 'flex',
@@ -40,7 +45,7 @@ const Header = () => {
                             return (
                                 <Step key={ step.id }>
                                     <StepLabel>
-                                        <Link style={ style.links } 
+                                        <Link style={ style.links }
                                             to={ step.path }
                                             onClick={()=>{ setStep(step.id) }}
                                         >

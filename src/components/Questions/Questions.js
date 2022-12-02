@@ -15,13 +15,6 @@ const Questions = ( props ) => {
             flexDirection: 'column',
             alignSelf: 'center',
             justifySelf: 'center',
-            alignContent: 'center',
-            justifyContent: 'center',
-            // left: '0',
-            // right: '0',
-            // margin: '0',
-            // padding: '0',
-            // height: '75vh'
         },
         list: {
             listStyleType: 'none',
@@ -29,9 +22,7 @@ const Questions = ( props ) => {
             padding: '0'
         },
         listItem: {
-            display: 'flex',
-
-            //justifyContent: 'center'
+            display: 'flex'
         },
         listItemEven: {
             display: 'flex',
@@ -43,10 +34,10 @@ const Questions = ( props ) => {
     const navigate = useNavigate();
     // gets the current question page from the url
     const { page: pageParam } = useParams();
-    
+
     // builds the answer object
     const { questions, setQuestions } = useContext( QuestionContext );
-    
+
     // sets the questions context to the questions JSON.
     useEffect(()=>{
         const questionValues = buildQuestions();

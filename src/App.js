@@ -2,21 +2,25 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { QuestionContextProvider } from './contexts/QuestionContext/QuestionContext';
 import { Header, Footer } from './components';
 import { TitlePage, QuestionPage, ScoreReportPage, ErrorPage } from './pages';
-import { Container } from '@mui/material';
+//import { Container } from '@mui/material';
 import './App.css';
+import { HEADER_HEIGHT, FOOTER_HEIGHT } from './constants/constants';
 
 
-const styles = {
-  container:{
-    display: 'flex',
-    flexDirection: 'column',
-    justifyItems: 'center',
-    flex: 'auto',
-    overflowY: 'scroll'
-  }
-}
+
 
 const App = () => {
+
+  const styles = {
+    container:{
+      height: `calc(100vh - ${HEADER_HEIGHT + FOOTER_HEIGHT}px)`,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyItems: 'center',
+      overflowY: 'auto'
+    }
+  }
+
   return (
     <QuestionContextProvider>
       <Router>

@@ -10,7 +10,7 @@ const Question = (props) => {
             padding: '20px',
             alignItems: 'center',
             width: '100%'
-        }, 
+        },
         answers: {
 
         },

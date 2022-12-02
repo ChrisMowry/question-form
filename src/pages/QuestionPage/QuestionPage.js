@@ -1,7 +1,6 @@
-import { flexbox } from '@mui/system';
+
 import Questions from '../../components/Questions/Questions';
 import { QUESTIONS_PER_PAGE } from '../../constants/constants';
-
 
 
 const QuestionPage = () => {
@@ -10,7 +9,7 @@ const QuestionPage = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            //height: '75vh'
+            overflowY: 'auto'
         }
     }
 

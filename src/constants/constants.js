@@ -1,6 +1,9 @@
 
 export const QUESTIONS_PER_PAGE = 10;
 
+export const HEADER_HEIGHT = 65;
+export const FOOTER_HEIGHT = 65;
+
 export const STEPS = [
     {
         id: 0,

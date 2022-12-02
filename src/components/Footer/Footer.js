@@ -4,7 +4,7 @@ import { Button, Toolbar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { ArrowForwardIosOutlined, ArrowBackIosOutlined } from '@mui/icons-material';
 import { QuestionContext } from '../../contexts';
-import { STEPS } from '../../constants/constants';
+import { STEPS, FOOTER_HEIGHT } from '../../constants/constants';
 
 
 
@@ -21,11 +21,10 @@ const Footer = (props) => {
             flex: 'none',
             justifyContent: 'center',
             left: '0',
-            right: '0'
+            right: '0',
+            height: `${FOOTER_HEIGHT}px`
         },
         toolbar:{
-            borderRadius: '10px',
-            boxShadow: '0px 3px 10px 1px rgba(0,0,0,0.4)',
             zIndex: '1000'
         }
     }
